@@ -36,7 +36,6 @@ $(document).ready(function () {
 
   // 📌 ウィンドウサイズ変更時に位置を更新
   $(window).on("resize", function () {
-    console.log("リサイズ");
     if (menuDrawer.is(":visible")) {
       updateMenuPosition();
     }
