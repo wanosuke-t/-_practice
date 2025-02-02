@@ -40,8 +40,13 @@
             <li class="header-nav-item">
               <a href="#about" class="header-nav-link">About</a>
             </li>
-            <li class="header-nav-item">
-              <a href="#menu" class="header-nav-link">Menu</a>
+            <li class="header-nav-item" id="toggle">
+              <span class="header-nav-link"  id="js-link-menu-drawer">Menu</span>
+              <ul class="menu-drawer" id="js-menu-drawer">
+                <li class="menu-drawer-item"><a href="#menu">新発売</a></li>
+                <li class="menu-drawer-item"><a href="#menu">おすすめ</a></li>
+                <li class="menu-drawer-item"><a href="#menu">期間限定</a></li>
+              </ul>
             </li>
             <li class="header-nav-item">
               <a href="#shop" class="header-nav-link">Shop</a>
@@ -192,5 +197,8 @@
         <small class="footer-copyright">&copy;2023 Sweet Delight.</small>
       </div>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

@@ -38,6 +38,29 @@ img {
   color: #ffffff;
 }
 
+.header-nav-link:hover {
+  cursor: pointer;
+}
+
+#toggle {
+  position: relative;
+}
+
+.menu-drawer {
+  position: absolute;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.25);
+  top: 29px;
+  left: -12px;
+  width: 64px;
+  font-size: 12px;
+  display: none;
+}
+
+.menu-drawer-item {
+  margin: 8px 0;
+}
+
 /* 共通クラス */
 .inner {
   padding: 0 40px;
@@ -235,6 +258,17 @@ img {
 
   .header-nav-link:hover {
     opacity: 0.7;
+  }
+
+  .menu-drawer {
+    top: 38px;
+    left: -16px;
+    width: 80px;
+    font-size: 14px;
+  }
+
+  .menu-drawer-item {
+    margin: 12px 0;
   }
 
   .inner {
