@@ -41,7 +41,7 @@
               <a href="#about" class="header-nav-link">About</a>
             </li>
             <li class="header-nav-item" id="toggle">
-              <span class="header-nav-link"  id="js-link-menu-drawer">Menu</span>
+              <span class="header-nav-link" id="js-link-menu-drawer">Menu</span>
               <ul class="menu-drawer" id="js-menu-drawer">
                 <li class="menu-drawer-item"><a href="#menu">新発売</a></li>
                 <li class="menu-drawer-item"><a href="#menu">おすすめ</a></li>
@@ -55,6 +55,11 @@
         </nav>
       </div>
     </header>
+
+    <!-- ページトップへ戻るボタン -->
+    <div class="page-top js-page-top">
+      <p class="page-top-text">TOP</p>
+    </div>
 
     <div class="fv">
       <picture class="fv-picture">
@@ -96,7 +101,11 @@
           <ul class="menu-list">
             <li class="menu-item">
               <div class="menu-img">
-                <img src="./img/menu1.png" alt="おすすめ ストロベリーケーキ" />
+                <img
+                  src="./img/menu1.png"
+                  alt="おすすめ ストロベリーケーキ"
+                  class="js-menu-img"
+                />
                 <div class="menu-text-contents">
                   <h3 class="menu-name">
                     <span class="menu-name-main">ストロベリーケーキ</span>
@@ -111,6 +120,7 @@
                 <img
                   src="./img/menu2.png"
                   alt="新発売 ブルーベリーチーズケーキ"
+                  class="js-menu-img"
                 />
                 <div class="menu-text-contents">
                   <h3 class="menu-name">
@@ -123,7 +133,11 @@
             </li>
             <li class="menu-item">
               <div class="menu-img">
-                <img src="./img/menu3.png" alt="おすすめ チョコレートケーキ" />
+                <img
+                  src="./img/menu3.png"
+                  alt="おすすめ チョコレートケーキ"
+                  class="js-menu-img"
+                />
                 <div class="menu-text-contents">
                   <h3 class="menu-name">
                     <span class="menu-name-main">チョコレートケーキ</span>
@@ -137,6 +151,19 @@
         </div>
       </div>
     </section>
+
+    <!-- モーダル本体 -->
+    <div class="modal-container">
+      <div class="modal-body">
+        <!-- モーダル内のコンテンツ -->
+        <div class="modal-content">
+          <img
+            src="./img/menu1.png"
+            alt="おすすめ ストロベリーケーキ"
+          />
+        </div>
+      </div>
+    </div>
 
     <section id="shop" class="shop">
       <div class="shop-inner">
