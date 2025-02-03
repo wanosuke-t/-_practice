@@ -1,0 +1,450 @@
+@use "variable";
+
+//マップ型変数breakpointsを定義
+$breakpoints: (
+  //キー　　値
+  "sp": "screen and (max-width: 767px)",
+  //767px以下（スマホ）用の表示
+  "pc": "screen and (min-width: 768px)" //768px以上（タブレット・PC）用の表示
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォルト値はsp
+@mixin mq($breakpoint: pc) {
+  //map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+body {
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  letter-spacing: 0.05em;
+  color: variable.$main-color;
+
+  .is-fixed {
+    overflow: hidden;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(241, 238, 228, 0.25);
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+
+  @include mq() {
+    padding: 16px;
+  }
+}
+
+.header-inner {
+  @include mq() {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.header-logo {
+  width: 200px;
+  margin: 0 auto;
+
+  @include mq() {
+    margin: 0;
+  }
+}
+
+.header-nav {
+  margin-top: 10px;
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @include mq() {
+    gap: 40px;
+  }
+}
+
+.header-nav-link {
+  color: variable.$white-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include mq() {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+#toggle {
+  position: relative;
+}
+
+.menu-drawer {
+  position: fixed;
+  color: variable.$white-color;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 64px;
+  font-size: 12px;
+  display: none;
+
+  @include mq() {
+    width: 80px;
+    font-size: 14px;
+  }
+}
+
+.menu-drawer-item {
+  margin: 8px 0;
+  @include mq() {
+    margin: 12px 0;
+  }
+}
+
+/* 共通クラス */
+.inner {
+  padding: 0 40px;
+
+  @include mq() {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading-l {
+  color: variable.$white-color;
+}
+
+.section-heading-main {
+  display: block;
+  font-size: 40px;
+
+  @include mq() {
+    font-size: 64px;
+  }
+}
+
+.section-heading-sub {
+  display: block;
+  font-size: 12px;
+}
+
+/* ページトップへ戻るボタン */
+.page-top {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 60px;
+  background-color: variable.$white-color;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.page-top-text {
+  text-align: center;
+  line-height: 64px;
+}
+
+/* ファーストビュー */
+.fv-picture {
+  img {
+    width: 100%;
+  }
+}
+
+/* aboutセクション */
+.about {
+  padding: 40px 0;
+  background-color: variable.$base-color;
+
+  @include mq() {
+    padding: 100px 0;
+  }
+}
+
+.about-contents {
+  @include mq() {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+}
+
+.about-text-contents {
+  margin-top: 20px;
+
+  @include mq() {
+    margin-top: 0;
+  }
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 2;
+  & + & {
+    margin-top: 16px;
+  }
+
+  @include mq() {
+    font-size: 15px;
+
+    & + & {
+      margin-top: 30px;
+    }
+  }
+}
+
+.about-img {
+  @include mq() {
+    width: 300px;
+  }
+}
+
+/* menuセクション */
+.menu {
+  background-color: variable.$base-color;
+  padding: 80px 0;
+
+  @include mq() {
+    padding: 0 0 100px;
+  }
+}
+
+.menu-list {
+  @include mq() {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.menu-item {
+  & + & {
+    margin-top: 62px;
+  }
+
+  @include mq() {
+    & + & {
+      margin-top: 0;
+    }
+  }
+}
+
+.menu-text-contents {
+  text-align: center;
+  padding: 16px 10px;
+}
+
+.menu-name-main {
+  display: block;
+  font-size: 18px;
+}
+
+.menu-name-sub {
+  display: block;
+  color: variable.$sub-color;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.menu-text {
+  font-size: 14px;
+  color: variable.$sub-color;
+  margin-top: 16px;
+}
+
+/* モーダル */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 50%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+
+  // モーダル本体の擬似要素の指定
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  // モーダル本体に「active」クラス付与した時のスタイル
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/*モーダル枠の指定*/
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* shopセクション */
+.shop {
+  background-image: url(../img/sp/bg-shop.png);
+  background-size: cover;
+  background-position: center center;
+  padding: 80px 0;
+
+  @include mq() {
+    background-image: url(../img/bg-shop.png);
+    padding: 60px 0;
+  }
+}
+
+.shop-inner {
+  padding: 0 20px;
+
+  @include mq() {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.shop-text {
+  color: variable.$white-color;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.form {
+  margin-top: 40px;
+
+  @include mq() {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 4px;
+  background-color: rgb(255 255 255/0.7);
+  border: none;
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  padding: 14px;
+}
+
+.form-submit {
+  border-radius: 4px;
+  border: none;
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  display: block;
+  margin: 10px auto 0;
+  width: 120px;
+  padding: 12px 10px;
+  color: variable.$white-color;
+  background-color: variable.$sub-color;
+
+  @include mq() {
+    margin-top: 0;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+/* footer */
+.footer {
+  background-color: variable.$main-color;
+  text-align: center;
+  padding-top: 46px;
+  color: variable.$white-color;
+}
+
+.footer-logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 12px;
+
+  @include mq() {
+    margin-top: 12px;
+  }
+}
+
+.footer-nav-list {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 20px;
+
+  @include mq() {
+    gap: 40px;
+  }
+}
+
+.footer-nav-link-text {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.sns-img {
+  width: 56px;
+}
+
+.footer-copy-wrapper {
+  border-top: 1px solid rgba(241, 238, 228, 0.25);
+  padding: 12px;
+  margin-top: 46px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+
+  @include mq() {
+    font-size: 13px;
+  }
+}

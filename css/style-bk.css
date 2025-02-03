@@ -1,0 +1,424 @@
+body {
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  letter-spacing: 0.05em;
+  color: #3c301e;
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(241, 238, 228, 0.25);
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+}
+
+.header-logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.header-nav {
+  margin-top: 10px;
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-nav-link {
+  color: #ffffff;
+}
+
+.header-nav-link:hover {
+  cursor: pointer;
+}
+
+#toggle {
+  position: relative;
+}
+
+.menu-drawer {
+  position: fixed;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 64px;
+  font-size: 12px;
+  display: none;
+}
+
+.menu-drawer-item {
+  margin: 8px 0;
+}
+
+/* 共通クラス */
+.inner {
+  padding: 0 40px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading-l {
+  color: #fff;
+}
+
+.section-heading-main {
+  display: block;
+  font-size: 40px;
+}
+
+.section-heading-sub {
+  display: block;
+  font-size: 12px;
+}
+
+/* ページトップへ戻るボタン */
+.page-top {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 60px;
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.page-top:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.page-top-text {
+  text-align: center;
+  line-height: 64px;
+}
+
+/* ファーストビュー */
+.fv-picture img {
+  width: 100%;
+}
+
+/* aboutセクション */
+.about {
+  padding: 40px 0;
+  background-color: #f1eee4;
+}
+
+.about-text-contents {
+  margin-top: 20px;
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.about-text + .about-text {
+  margin-top: 16px;
+}
+
+/* menuセクション */
+.menu {
+  background-color: #f1eee4;
+  padding: 80px 0;
+}
+
+.menu-item + .menu-item {
+  margin-top: 62px;
+}
+
+.menu-text-contents {
+  text-align: center;
+  padding: 16px 10px;
+}
+
+.menu-name-main {
+  display: block;
+  font-size: 18px;
+}
+
+.menu-name-sub {
+  display: block;
+  color: #a98c5f;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.menu-text {
+  font-size: 14px;
+  color: #a98c5f;
+  margin-top: 16px;
+}
+
+/* モーダル */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 50%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+/*モーダル本体の擬似要素の指定*/
+.modal-container:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+/*モーダル本体に「active」クラス付与した時のスタイル*/
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+/*モーダル枠の指定*/
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* shopセクション */
+.shop {
+  background-image: url(../img/sp/bg-shop.png);
+  background-size: cover;
+  background-position: center center;
+  padding: 80px 0;
+}
+
+.shop-inner {
+  padding: 0 20px;
+}
+
+.shop-text {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.form {
+  margin-top: 40px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 4px;
+  background-color: rgb(255 255 255/0.7);
+  border: none;
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  padding: 14px;
+}
+
+.form-submit {
+  border-radius: 4px;
+  border: none;
+  font-family: "Josefin Sans", "Noto Sans JP", serif;
+  display: block;
+  margin: 10px auto 0;
+  width: 120px;
+  padding: 12px 10px;
+  color: #fff;
+  background-color: #a98c5f;
+}
+
+/* footer */
+.footer {
+  background-color: #3c301e;
+  text-align: center;
+  padding-top: 46px;
+  color: #fff;
+}
+
+.footer-logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 12px;
+}
+
+.footer-nav-list {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.footer-nav-link-text {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.sns-img {
+  width: 56px;
+}
+
+.footer-copy-wrapper {
+  border-top: 1px solid rgba(241, 238, 228, 0.25);
+  padding: 12px;
+  margin-top: 46px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+}
+
+/* タブレット、PCサイズの表示 */
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 16px;
+  }
+
+  .header-inner {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    margin: 0;
+  }
+
+  .header-nav-list {
+    gap: 40px;
+  }
+
+  .header-nav-link {
+    transition: opacity 0.3s;
+  }
+
+  .header-nav-link:hover {
+    opacity: 0.7;
+  }
+
+  .menu-drawer {
+    top: 38px;
+    left: -16px;
+    width: 80px;
+    font-size: 14px;
+  }
+
+  .menu-drawer-item {
+    margin: 12px 0;
+  }
+
+  .inner {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+
+  .section-heading-main {
+    font-size: 64px;
+  }
+
+  .about {
+    padding: 100px 0;
+  }
+
+  .about-contents {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .about-text-contents {
+    margin-top: 0;
+  }
+
+  .about-text + .about-text {
+    margin-top: 30px;
+  }
+
+  .about-img {
+    width: 300px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .menu {
+    padding: 0 0 100px;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu-item + .menu-item {
+    margin-top: 0;
+  }
+  
+  .shop {
+    background-image: url(../img/bg-shop.png);
+    background-size: cover;
+    background-position: center center;
+    padding: 60px 0;
+  }
+
+  .shop-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form {
+    display: flex;
+    gap: 20px;
+  }
+
+  .form-submit {
+    margin-top: 0;
+    transition: opacity 0.3s;
+  }
+
+  .form-submit:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .footer-text {
+    margin-top: 12px;
+  }
+
+  .footer-nav-list {
+    gap: 40px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+  }
+}

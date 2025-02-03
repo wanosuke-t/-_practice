@@ -1,10 +1,10 @@
+@charset "UTF-8";
 body {
   font-family: "Josefin Sans", "Noto Sans JP", serif;
   letter-spacing: 0.05em;
   color: #3c301e;
 }
-
-body.is-fixed {
+body .is-fixed {
   overflow: hidden;
 }
 
@@ -22,10 +22,34 @@ img {
   text-align: center;
   padding: 12px;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-inner {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 
 .header-logo {
   width: 200px;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .header-logo {
+    margin: 0;
+  }
 }
 
 .header-nav {
@@ -33,17 +57,34 @@ img {
 }
 
 .header-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header-nav-list {
+    gap: 40px;
+  }
 }
 
 .header-nav-link {
   color: #ffffff;
 }
-
 .header-nav-link:hover {
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .header-nav-link {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .header-nav-link:hover {
+    opacity: 0.7;
+  }
 }
 
 #toggle {
@@ -58,14 +99,32 @@ img {
   font-size: 12px;
   display: none;
 }
+@media screen and (min-width: 768px) {
+  .menu-drawer {
+    width: 80px;
+    font-size: 14px;
+  }
+}
 
 .menu-drawer-item {
   margin: 8px 0;
+}
+@media screen and (min-width: 768px) {
+  .menu-drawer-item {
+    margin: 12px 0;
+  }
 }
 
 /* 共通クラス */
 .inner {
   padding: 0 40px;
+}
+@media screen and (min-width: 768px) {
+  .inner {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
 }
 
 .section-heading {
@@ -74,12 +133,17 @@ img {
 }
 
 .section-heading-l {
-  color: #fff;
+  color: #ffffff;
 }
 
 .section-heading-main {
   display: block;
   font-size: 40px;
+}
+@media screen and (min-width: 768px) {
+  .section-heading-main {
+    font-size: 64px;
+  }
 }
 
 .section-heading-sub {
@@ -93,12 +157,13 @@ img {
   position: fixed;
   bottom: 80px;
   right: 60px;
-  background-color: #fff;
+  background-color: #ffffff;
   width: 60px;
   height: 60px;
   border-radius: 30px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
-
 .page-top:hover {
   opacity: 0.7;
   cursor: pointer;
@@ -119,18 +184,53 @@ img {
   padding: 40px 0;
   background-color: #f1eee4;
 }
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 100px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 
 .about-text-contents {
   margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .about-text-contents {
+    margin-top: 0;
+  }
 }
 
 .about-text {
   font-size: 14px;
   line-height: 2;
 }
-
 .about-text + .about-text {
   margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+  .about-text {
+    font-size: 15px;
+  }
+  .about-text + .about-text {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-img {
+    width: 300px;
+  }
 }
 
 /* menuセクション */
@@ -138,9 +238,28 @@ img {
   background-color: #f1eee4;
   padding: 80px 0;
 }
+@media screen and (min-width: 768px) {
+  .menu {
+    padding: 0 0 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+  }
+}
 
 .menu-item + .menu-item {
   margin-top: 62px;
+}
+@media screen and (min-width: 768px) {
+  .menu-item + .menu-item {
+    margin-top: 0;
+  }
 }
 
 .menu-text-contents {
@@ -174,28 +293,27 @@ img {
   width: 100%;
   height: 100%;
   text-align: center;
-  background: rgba(0, 0, 0, 50%);
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px 20px;
   overflow: auto;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-
-/*モーダル本体の擬似要素の指定*/
 .modal-container:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
   height: 100%;
 }
-
-/*モーダル本体に「active」クラス付与した時のスタイル*/
 .modal-container.active {
   opacity: 1;
   visibility: visible;
 }
+
 /*モーダル枠の指定*/
 .modal-body {
   position: relative;
@@ -212,13 +330,25 @@ img {
   background-position: center center;
   padding: 80px 0;
 }
+@media screen and (min-width: 768px) {
+  .shop {
+    background-image: url(../img/bg-shop.png);
+    padding: 60px 0;
+  }
+}
 
 .shop-inner {
   padding: 0 20px;
 }
+@media screen and (min-width: 768px) {
+  .shop-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
 
 .shop-text {
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   font-size: 14px;
   line-height: 2;
@@ -227,11 +357,19 @@ img {
 .form {
   margin-top: 40px;
 }
+@media screen and (min-width: 768px) {
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+  }
+}
 
 .form-input {
   width: 100%;
   border-radius: 4px;
-  background-color: rgb(255 255 255/0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   border: none;
   font-family: "Josefin Sans", "Noto Sans JP", serif;
   padding: 14px;
@@ -245,8 +383,19 @@ img {
   margin: 10px auto 0;
   width: 120px;
   padding: 12px 10px;
-  color: #fff;
+  color: #ffffff;
   background-color: #a98c5f;
+}
+@media screen and (min-width: 768px) {
+  .form-submit {
+    margin-top: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .form-submit:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 }
 
 /* footer */
@@ -254,7 +403,7 @@ img {
   background-color: #3c301e;
   text-align: center;
   padding-top: 46px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-logo {
@@ -265,13 +414,27 @@ img {
 .footer-text {
   font-size: 12px;
 }
+@media screen and (min-width: 768px) {
+  .footer-text {
+    margin-top: 12px;
+  }
+}
 
 .footer-nav-list {
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 24px;
   padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav-list {
+    gap: 40px;
+  }
 }
 
 .footer-nav-link-text {
@@ -292,131 +455,7 @@ img {
 .footer-copyright {
   font-size: 12px;
 }
-
-/* タブレット、PCサイズの表示 */
 @media screen and (min-width: 768px) {
-  .header {
-    padding: 16px;
-  }
-
-  .header-inner {
-    max-width: 1080px;
-    padding: 0 40px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .header-logo {
-    margin: 0;
-  }
-
-  .header-nav-list {
-    gap: 40px;
-  }
-
-  .header-nav-link {
-    transition: opacity 0.3s;
-  }
-
-  .header-nav-link:hover {
-    opacity: 0.7;
-  }
-
-  .menu-drawer {
-    top: 38px;
-    left: -16px;
-    width: 80px;
-    font-size: 14px;
-  }
-
-  .menu-drawer-item {
-    margin: 12px 0;
-  }
-
-  .inner {
-    max-width: 1080px;
-    padding: 0 40px;
-    margin: 0 auto;
-  }
-
-  .section-heading-main {
-    font-size: 64px;
-  }
-
-  .about {
-    padding: 100px 0;
-  }
-
-  .about-contents {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .about-text-contents {
-    margin-top: 0;
-  }
-
-  .about-text + .about-text {
-    margin-top: 30px;
-  }
-
-  .about-img {
-    width: 300px;
-  }
-
-  .about-text {
-    font-size: 15px;
-  }
-
-  .menu {
-    padding: 0 0 100px;
-  }
-
-  .menu-list {
-    display: flex;
-    gap: 20px;
-  }
-
-  .menu-item + .menu-item {
-    margin-top: 0;
-  }
-  .shop {
-    background-image: url(../img/bg-shop.png);
-    background-size: cover;
-    background-position: center center;
-    padding: 60px 0;
-  }
-
-  .shop-inner {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .form {
-    display: flex;
-    gap: 20px;
-  }
-
-  .form-submit {
-    margin-top: 0;
-    transition: opacity 0.3s;
-  }
-
-  .form-submit:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
-
-  .footer-text {
-    margin-top: 12px;
-  }
-
-  .footer-nav-list {
-    gap: 40px;
-  }
-
   .footer-copyright {
     font-size: 13px;
   }
